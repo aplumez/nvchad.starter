@@ -17,11 +17,13 @@ M.base46 = {
 M.nvdash = {
   load_on_startup = true,
   header = {
-    "  ╱▙                        ",
-    " ╱╱█▙   E X O S C A L E     ",
-    "╱╱╱██▙                      ",
+    "     ╱▙                     ",
+    "    ╱╱█▙   E X O S C A L E  ",
+    "   ╱╱╱██▙                   ",
+    "                            ",
     "                            ",
     "     Powered By  eovim    ",
+    "                            ",
   },
 }
 
