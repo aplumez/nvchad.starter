@@ -1,25 +1,14 @@
-return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
+local result = {}
 
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
+local global = require "plugins.global"
+local html_css = require "plugins.html_css"
+local javascript = require "plugins.javascript"
+local clojure = require "plugins.clojure"
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
-}
+for _, config_file in ipairs { global, html_css, javascript, clojure } do
+  for _, plugin_config in ipairs(config_file) do
+    result[#result + 1] = plugin_config
+  end
+end
+
+return result
